@@ -9,9 +9,14 @@ const saveAverageLocation = (req, res) => {
   };
 
   data.addData(averageLocation);
-  res.status(201).send({ message: 'Location saved', data: averageLocation });
+  res.status(201).json({ message: 'Location saved', data: averageLocation });
+};
+
+const getData = (req, res) => {
+  res.status(200).json({ message: 'data', data: data.getData() });
 };
 
 module.exports = {
   saveAverageLocation,
+  getData,
 };
